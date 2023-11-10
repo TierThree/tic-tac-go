@@ -11,9 +11,9 @@ func checkWin(b *Board, player string) bool {
 	colOne, colTwo, colThree := b.returnColumns()
 
 	lines := []([]string){
-		b.rowOne[:],
-		b.rowTwo[:],
-		b.rowThree[:],
+		b.rowOne,
+		b.rowTwo,
+		b.rowThree,
 		diagOne,
 		diagTwo,
 		colOne,
@@ -36,4 +36,14 @@ func playerOpposite(player string) string {
 	}
 
 	return "X"
+}
+
+func fullBoard(b *Board) bool {
+	if !(slices.Contains(b.rowOne, " ")) &&
+		!(slices.Contains(b.rowTwo, " ")) &&
+		!(slices.Contains(b.rowThree, " ")) {
+		return true
+	}
+
+	return false
 }

@@ -24,6 +24,13 @@ func controller(b *Board) {
 				return
 			}
 
+			if fullBoard(b) {
+				fmt.Printf("The board is full, last player was %s\n", player)
+				gameState = true
+				b.displayBoard()
+				return
+			}
+
 			b.displayBoard()
 
 			player = playerOpposite(player)

@@ -5,9 +5,9 @@ import (
 )
 
 type Board struct {
-	rowOne   [3]string
-	rowTwo   [3]string
-	rowThree [3]string
+	rowOne   []string
+	rowTwo   []string
+	rowThree []string
 }
 
 func (b *Board) returnDiagonals() ([]string, []string) {
