@@ -31,6 +31,7 @@ func controller(b *Board) {
 				return
 			}
 
+			fmt.Println("\033[2J")
 			b.displayBoard()
 
 			player = playerOpposite(player)
